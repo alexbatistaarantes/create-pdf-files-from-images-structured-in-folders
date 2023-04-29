@@ -4,7 +4,18 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    
+    <style>
+        body {
+            width: 40%;
+            margin: auto;
+            background-color: black;
+            color: white;
+        }
+        ul {
+            list-style-type: none;
+        }
+    </style>
+
     <title>Folder's structured images to PDF</title>
 </head>
 <body>
@@ -18,21 +29,21 @@
             <p> The name says it all, but to exemplify, if you select the parent folder "Documents scans", from the following structure </p>
             <ul id="structure-example">
                 <li>
-                    <h3>Documents scans</h3>
+                    <h3>🗁 Documents scans</h3>
                     <ul>
                         <li>
-                            <h4>Document 1</h4>
+                            <h4>🗁 Document 1</h4>
                             <ul>
-                                <li>Image.jpg</li>
-                                <li>Image (2).jpg</li>
-                                <li>Image (3).jpg</li>
+                                <li>🖻 Image.jpg</li>
+                                <li>🖻 Image (2).jpg</li>
+                                <li>🖻 Image (3).jpg</li>
                             </ul>
                         </li>
                         <li>
-                            <h4>Form</h4>
+                            <h4>🗁 Form</h4>
                             <ul>
-                                <li>Form 1.png</li>
-                                <li>Form 2.png</li>
+                                <li>🖻 Form 1.png</li>
+                                <li>🖻 Form 2.png</li>
                             </ul>
                         </li>
                     </ul>
@@ -42,7 +53,7 @@
             <p> you will end up with the PDF files (and pages (in the same order)) below </p>
             <ul id="pdf-files-example">
                 <li>
-                    <h4>Document 1.pdf</h4>
+                    <h4>🖹 Document 1.pdf</h4>
                     <ol>
                         <li>[Image.jpg]</li>
                         <li>[Image (2).jpg]</li>
@@ -50,7 +61,7 @@
                     </ol>
                 </li>
                 <li>
-                    <h4>Form.pdf</h4>
+                    <h4>🖹 Form.pdf</h4>
                     <ol>
                         <li>[Form 1.png]</li>
                         <li>[Form 2.png]</li>
