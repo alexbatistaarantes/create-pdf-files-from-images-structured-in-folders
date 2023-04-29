@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <title>Folder's structured images to PDF</title>
+</head>
+<body>
+    
+    <header>
+        <h1> Create PDF files from images structured in folders </h1>
+    </header>
+
+    <main>
+        <div id="about">
+            <p> The name says it all, but to exemplify, if you select the parent folder "Documents scans", from the following structure </p>
+            <ul id="structure-example">
+                <li>
+                    <h3>Documents scans</h3>
+                    <ul>
+                        <li>
+                            <h4>Document 1</h4>
+                            <ul>
+                                <li>Image.jpg</li>
+                                <li>Image (2).jpg</li>
+                                <li>Image (3).jpg</li>
+                            </ul>
+                        </li>
+                        <li>
+                            <h4>Form</h4>
+                            <ul>
+                                <li>Form 1.png</li>
+                                <li>Form 2.png</li>
+                            </ul>
+                        </li>
+                    </ul>
+                </li>
+            </ul>
+
+            <p> you will end up with the PDF files (and pages (in the same order)) below </p>
+            <ul id="pdf-files-example">
+                <li>
+                    <h4>Document 1.pdf</h4>
+                    <ol>
+                        <li>[Image.jpg]</li>
+                        <li>[Image (2).jpg]</li>
+                        <li>[Image (3).jpg]</li>
+                    </ol>
+                </li>
+                <li>
+                    <h4>Form.pdf</h4>
+                    <ol>
+                        <li>[Form 1.png]</li>
+                        <li>[Form 2.png]</li>
+                    </ol>
+                </li>
+            </ul>
+        </div>
+        <hr>
+        <div id="form">
+            <div>
+                <label for="structure">Select the parent folder:</label>
+                <input type="file" name="structure" id="structure" webkitdirectory="" directory="" multiple/>
+            </div>
+            <button id="create"> Create PDF files </button>
+        </div>
+
+        <div id="images"></div>
+    </main>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
+    <script src="utils.js"></script>
+    <script src="script.js"></script>
+</body>
+</html>
