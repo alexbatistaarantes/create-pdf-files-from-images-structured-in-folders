@@ -20,9 +20,14 @@ async function createPDFFiles(){
     
     for(let name of Object.keys(documents)){
         let doc = undefined;
+        
+        let images = Object.assign({}, ...documents[name].map((file) => ({[file.name]: file})));
+        // Sorting the images by filename
+        images = Object.keys(images).sort().reduce( (obj, key) => { obj[key] = images[key]; return obj;}, {});
 
-        const images = documents[name];
-        for(let image of images){
+        for(key of Object.keys(images)){
+            const image = images[key];
+
             const img = await loadImage(image);
             const format = [img.width, img.height];
             // if width is bigger than height and orientation is set to portrait, the image won't fit the page, and vice-versa
@@ -38,7 +43,7 @@ async function createPDFFiles(){
             }else{
                 doc.addPage(format, orientation);
             }
-            
+
             const ext = image.type.split("image/")[1].toUpperCase();
 
             /* const b64 = getBase64(image); doc.addImage(b64, ext, 10, 10); */
